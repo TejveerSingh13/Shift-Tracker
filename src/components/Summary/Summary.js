@@ -4,9 +4,9 @@ const Summary = () => {
     return ( 
         <SummaryContainer>
             <div>This week you worked</div>
-            <Hours>35.5</Hours>
+            <Hours>14.5</Hours>
             <span>Hrs</span>
-            <Location>At Little India</Location>
+            <Location>At ID Station</Location>
         </SummaryContainer>
      );
 }

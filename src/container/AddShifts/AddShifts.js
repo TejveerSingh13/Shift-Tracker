@@ -28,7 +28,7 @@ const AddTask = () => {
                         <Input />
                     </InputCover>
                     <TimeInputCont>
-                        <InputCover error={false}>
+                        <InputCover error={false} right={true}>
                             <InputLabel>Time-In</InputLabel>
                             <Input type= 'time'/>
                         </InputCover>

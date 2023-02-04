@@ -32,6 +32,7 @@ export const InputCover = styled.div`
   display:flex;
   flex-direction: column;
   width: 224px;
+  margin-right: ${props => props.right ? '12px' : '0'};
   margin-bottom: 16px;
   border-bottom: ${props => props.error ? '3px solid #971c1c' : null};
   &:focus-within {

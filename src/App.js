@@ -1,6 +1,7 @@
 import Summary from "./components/Summary/Summary";
 import {createGlobalStyle} from "styled-components"
 import AddShifts from "./container/AddShifts/AddShifts";
+import OverView from "./components/OverView/Overview";
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -14,6 +15,7 @@ function App() {
       <GlobalStyle />
       <Summary />
       <AddShifts />
+      <OverView />
     </div>
   );
 }
