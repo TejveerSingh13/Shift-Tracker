@@ -9,7 +9,7 @@ import {
     Input, 
     TimeInputCont} from './style';
 
-const AddTask = () => {
+const AddShifts = () => {
     const [taskFlag, setTaskFlag] = useState(false)
     const onAddClick = () => {
         setTaskFlag(current => !current)
@@ -47,4 +47,4 @@ const AddTask = () => {
      );
 }
  
-export default AddTask;
+export default AddShifts;

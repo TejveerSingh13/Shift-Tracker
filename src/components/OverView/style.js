@@ -8,6 +8,9 @@ color: white;
 border-radius: 4px;
 font-size: 22px;
 max-width: 536px;
+@media (min-width: 588px) {
+    width: 536px;
+}
 `
 export const OVItemsContainer = styled.div`
 background-color: #845EC2;

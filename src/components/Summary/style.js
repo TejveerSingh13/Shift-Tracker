@@ -8,6 +8,9 @@ color: white;
 border-radius: 4px;
 font-size: 24px;
 max-width: 536px;
+@media (min-width: 588px) {
+    width: 536px;
+}
 `
 export const Hours = styled.span`
 font-size: 64px;
