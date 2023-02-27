@@ -23,12 +23,18 @@ color: white;
 width: 24px;
 height: 24px;
 margin: auto 0 auto auto;
+&:hover {
+    cursor: pointer;
+  }
 `
 export const FormContainer = styled.div`
-height: ${props=> props.height ? '28vh' : '0vh'};
+height: ${props=> props.height ? '34vh' : '0vh'};
 transition-property: height; 
 transition-duration: 0.1s; 
 overflow: hidden;
+@media (min-width: 588px) {
+  height: ${props=> props.height ? '33vh' : '0vh'};
+}
 `
 export const InputCover = styled.div`
   border-bottom: 1px solid #B0A8B9;
@@ -55,7 +61,34 @@ export const Input = styled.input`
   background-color: #C34A36;
   color: white;
 `
+export const Select = styled.select`
+  border: none;
+  outline: none;
+  margin: auto;
+  width:100%;
+  background-color: #C34A36;
+  color: white;
+`
 export const TimeInputCont = styled.div`
-display:flex;
-justify-content: space-between;
+  display:flex;
+  justify-content: space-between;
+`
+export const ButtonContainer = styled.div`
+  display:flex;
+  align-items:center;
+`
+export const FormButton = styled.button`
+  margin: 16px auto 0;
+  height:32px;
+  border: none;
+  width:144px;
+  border-radius:20px;
+  color: white;
+  outline: none;
+  font-size: 16px;
+  background-color:black;
+  font-family: 'Pacifico', cursive;
+  &:hover {
+    cursor: pointer;
+  }
 `
