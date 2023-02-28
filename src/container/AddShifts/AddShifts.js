@@ -20,6 +20,7 @@ const AddShifts = () => {
         ti:'',
         to:'',
         date:'',
+        hrs:0,
     })
     const places= [
         {
@@ -37,7 +38,20 @@ const AddShifts = () => {
         console.log(taskFlag);
     }
     const changeHandler = (e) => {
-        console.log(e.target.value);
+        // console.log(e.target.value)
+        setShiftInfo({...shiftInfo, [e.target.name]: e.target.value})
+    }
+    const gethrs = () => {
+        let hi = shiftInfo.ti.split(":")[0]
+        let mini = shiftInfo.ti.split(":")[1]
+        let ho = shiftInfo.to.split(":")[0]
+        let mino = shiftInfo.to.split(":")[1]
+        let hrs = ho -hi + (mino - mini)/60
+        setShiftInfo({...shiftInfo, hrs: hrs})
+    }
+    const onSubmit = () => {
+        gethrs()
+        console.log(shiftInfo);
     }
     return ( 
         <>
@@ -49,7 +63,7 @@ const AddShifts = () => {
                 <FormContainer height={taskFlag}>
                     <InputCover error={false}>
                         <InputLabel>Select Workplace</InputLabel>
-                        <Select value={shiftInfo.place} onChange={changeHandler}>
+                        <Select value={shiftInfo.place} onChange={changeHandler} name='place'>
                             <option name =''> -- select an option -- </option>
                             {places.map((p)=>{
                                 return <option name={p.name}>{p.name}</option>
@@ -59,19 +73,19 @@ const AddShifts = () => {
                     <TimeInputCont>
                         <InputCover error={false} right={true}>
                             <InputLabel>Time-In</InputLabel>
-                            <Input type= 'time' value={shiftInfo.ti} onChange={changeHandler}/>
+                            <Input type= 'time' value={shiftInfo.ti} onChange={changeHandler} name='ti'/>
                         </InputCover>
                         <InputCover error={false}>
                             <InputLabel>Time-Out</InputLabel>
-                            <Input type= 'time' value={shiftInfo.to} onChange={changeHandler}/>
+                            <Input type= 'time' value={shiftInfo.to} onChange={changeHandler} name='to'/>
                         </InputCover>
                     </TimeInputCont>
                     <InputCover error={false}>
                         <InputLabel>Date</InputLabel>
-                        <Input type= 'date' value={shiftInfo.date} onChange={changeHandler}/>
+                        <Input type= 'date' value={shiftInfo.date} onChange={changeHandler} name='date'/>
                     </InputCover>
                     <ButtonContainer>
-                        <FormButton>Save</FormButton>
+                        <FormButton onClick={onSubmit}>Save</FormButton>
                     </ButtonContainer>
                 </FormContainer>
             </ASContainer>
