@@ -20,7 +20,6 @@ const AddShifts = () => {
         ti:'',
         to:'',
         date:'',
-        hrs:0,
     })
     const places= [
         {
@@ -47,11 +46,12 @@ const AddShifts = () => {
         let ho = shiftInfo.to.split(":")[0]
         let mino = shiftInfo.to.split(":")[1]
         let hrs = ho -hi + (mino - mini)/60
-        setShiftInfo({...shiftInfo, hrs: hrs})
+        return hrs
     }
     const onSubmit = () => {
-        gethrs()
-        console.log(shiftInfo);
+        const hr = gethrs()
+        const details = {...shiftInfo, hrs: hr}
+        console.log(details);
     }
     return ( 
         <>
