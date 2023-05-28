@@ -28,12 +28,12 @@ margin: auto 0 auto auto;
   }
 `
 export const FormContainer = styled.div`
-height: ${props=> props.height ? '34vh' : '0vh'};
+height: ${props => (props.height === 'true' ? 'auto' : '0vh')};
 transition-property: height; 
 transition-duration: 0.1s; 
 overflow: hidden;
 @media (min-width: 588px) {
-  height: ${props=> props.height ? '33vh' : '0vh'};
+  height: ${props => (props.height === 'true' ? 'auto' : '0vh')};
 }
 `
 export const InputCover = styled.div`

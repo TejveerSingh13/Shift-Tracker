@@ -34,10 +34,8 @@ const AddShifts = () => {
 
     const onAddClick = () => {
         setTaskFlag(current => !current)
-        console.log(taskFlag);
     }
     const changeHandler = (e) => {
-        // console.log(e.target.value)
         setShiftInfo({...shiftInfo, [e.target.name]: e.target.value})
     }
     const gethrs = () => {
@@ -56,17 +54,17 @@ const AddShifts = () => {
     return ( 
         <>
             <ASContainer>
-                <ASContainerTitile height={taskFlag}>
+                <ASContainerTitile $height={taskFlag}>
                     <span>Add/Edit a shift</span>
                     <AddIcon onClick={onAddClick}/>
                 </ASContainerTitile>
-                <FormContainer height={taskFlag}>
+                <FormContainer height={taskFlag.toString()}>
                     <InputCover error={false}>
                         <InputLabel>Select Workplace</InputLabel>
                         <Select value={shiftInfo.place} onChange={changeHandler} name='place'>
                             <option name =''> -- select an option -- </option>
                             {places.map((p)=>{
-                                return <option name={p.name}>{p.name}</option>
+                                return <option key={p.name} name={p.name}>{p.name}</option>
                             })}
                         </Select>
                     </InputCover>
