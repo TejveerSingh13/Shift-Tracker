@@ -12,7 +12,9 @@ import {
     FormButton,
     Select} from './style';
 
-const AddShifts = () => {
+import { postUserData } from '../../redux/ActionCreator';
+
+const AddShifts = ({places}) => {
 
     const [taskFlag, setTaskFlag] = useState(false)
     const [shiftInfo, setShiftInfo] = useState({
@@ -21,16 +23,6 @@ const AddShifts = () => {
         to:'',
         date:'',
     })
-    const places= [
-        {
-            name: "Saffron Grill",
-            rate: "16"
-        },
-        {
-            name: "ID Station",
-            rate: "16"
-        }
-    ]
 
     const onAddClick = () => {
         setTaskFlag(current => !current)
@@ -49,13 +41,14 @@ const AddShifts = () => {
     const onSubmit = () => {
         const hr = gethrs()
         const details = {...shiftInfo, hrs: hr}
+        postUserData(details)
         console.log(details);
     }
     return ( 
         <>
             <ASContainer>
                 <ASContainerTitile $height={taskFlag}>
-                    <span>Add/Edit a shift</span>
+                    <span>Add a shift</span>
                     <AddIcon onClick={onAddClick}/>
                 </ASContainerTitile>
                 <FormContainer height={taskFlag.toString()}>
@@ -63,9 +56,9 @@ const AddShifts = () => {
                         <InputLabel>Select Workplace</InputLabel>
                         <Select value={shiftInfo.place} onChange={changeHandler} name='place'>
                             <option name =''> -- select an option -- </option>
-                            {places.map((p)=>{
+                            {places ? places.map((p)=>{
                                 return <option key={p.name} name={p.name}>{p.name}</option>
-                            })}
+                            }) : <option>null</option>}
                         </Select>
                     </InputCover>
                     <TimeInputCont>

@@ -4,7 +4,7 @@ import { OVContainer } from "./style";
 const OverView = () => {
     return(
         <OVContainer>
-            <div>Your shifts this Week</div>
+            <div>Your most recent Shifts</div>
             <OVItems day='Monday' date='26' month='January'/>   
         </OVContainer>
     )

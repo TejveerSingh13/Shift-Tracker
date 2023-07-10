@@ -4,7 +4,7 @@ import OverView from "../../components/OverView/Overview";
 import Summary from "../../components/Summary/Summary";
 import AddShifts from "../AddShifts/AddShifts";
 import { getUserData } from "../../redux/ActionCreator";
-import { HomePageContainer } from "./style";
+import { HomePageContainer, LoaderContainer, LoaderIcon } from "./style";
 
 
 const HomePage = () => {
@@ -19,9 +19,12 @@ const HomePage = () => {
 
     return(
         <HomePageContainer>
-            <Summary />
-            <AddShifts />
-            <OverView />
+            {userData.loading ? (<LoaderContainer>
+                <LoaderIcon />
+            </LoaderContainer>)
+            :( <> <Summary />
+            <AddShifts places={userData.data.places}/>
+            <OverView />  </>) }
         </HomePageContainer>
     );
 }
