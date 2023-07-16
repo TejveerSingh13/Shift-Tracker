@@ -22,9 +22,11 @@ const HomePage = () => {
             {userData.loading ? (<LoaderContainer>
                 <LoaderIcon />
             </LoaderContainer>)
-            :( <> <Summary />
+            :( <> 
+            <Summary />
             <AddShifts places={userData.data.places}/>
-            <OverView />  </>) }
+            <OverView />  
+            </>) }
         </HomePageContainer>
     );
 }

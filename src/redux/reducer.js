@@ -24,7 +24,8 @@ export const reducer = (state = initialState, actions) => {
         case FETCH_USER_DATA_FAILURE:
             return{
                 ...state,
-                loading: false,
+                loading: true,
+                data:[],
                 error: actions.payload
             }
 

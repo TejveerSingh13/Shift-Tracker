@@ -11,7 +11,7 @@ export const getUserData = () => {
         })
         .catch(err => {
             const errmsg = err
-            dispatch(errorUserData(errmsg))
+            dispatch(errorUserData(errmsg.message))
         })
     }
 }
