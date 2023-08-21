@@ -10,10 +10,11 @@ import {
     FormButton,
     Select} from './style';
 
-const InputForm = () => {
+const InputForm = (props) => {
 
     const datadata = useSelector(state => state.user)
-    console.log("BRUH!",datadata);
+    const places = datadata.data.places
+    const {sentData} = props
 
     const [shiftInfo, setShiftInfo] = useState({
         place:'',
@@ -36,8 +37,13 @@ const InputForm = () => {
     const onSubmit = () => {
         const hr = gethrs()
         const details = {...shiftInfo, hrs: hr}
-        postUserData(details)
-        console.log(details);
+        if(!props?.data) setShiftInfo({
+            place:'',
+            ti:'',
+            to:'',
+            date:'',
+        })
+        sentData(details)
     }
 
     return(
