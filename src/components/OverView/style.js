@@ -13,7 +13,7 @@ max-width: 536px;
 }
 `
 export const OVItemsContainer = styled.div`
-background-color: #845EC2;
+background-color: ${props => (props.odd ? '#c34a36' : '#845ec2')};
 margin-top: 8px;
 padding: 8px;
 font-size: 16px;

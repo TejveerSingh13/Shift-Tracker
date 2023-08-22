@@ -1,12 +1,13 @@
-import OVItemList from "./OVItemList";
-import { OVIDate, OVItemsContainer } from "./style";
+import { OVIDate, OVItemsContainer, OVItemListContainer } from "./style";
 
-const OVItems = ({day, date, month}) => {
+const OVItems = ({day, date, month, place, hr, odd}) => {
     return(
-        <OVItemsContainer>
+        <OVItemsContainer odd={odd}>
             <OVIDate>{day} , {date} {month}</OVIDate>
-            <OVItemList place='ID Station' hr='10'/>
-            <OVItemList place='Saffron Grill' hr='6'/>
+            <OVItemListContainer>
+                <div>{place} </div>
+                <div>{hr} Hours</div>
+            </OVItemListContainer>
         </OVItemsContainer>
     )
 }
