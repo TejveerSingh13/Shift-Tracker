@@ -40,7 +40,7 @@ const OverView = () => {
     return(
         <>
         <OVContainer>
-            <div>Your most recent Shifts</div>
+            <div style={{fontSize:'24px'}}>Your most recent Shifts</div>
             {recentShifts.map((shift, index) => {
                 const date = new Date(shift.date);
                 return (
