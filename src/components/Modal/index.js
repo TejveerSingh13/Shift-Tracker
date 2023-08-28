@@ -1,11 +1,13 @@
-import { FormContainer,ModalContainer} from './style';
+import { IconContainer, CrossIcon, FormContainer,ModalContainer} from './style';
 
 const Modal = (props) => {
+
     return (
         <ModalContainer>
             <FormContainer>
-            {props.children}
-          </FormContainer>
+                <IconContainer><CrossIcon onClick={props.onclick}/></IconContainer>
+                {props.children}
+            </FormContainer>
         </ModalContainer>
     )
 }

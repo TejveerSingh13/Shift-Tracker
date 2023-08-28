@@ -37,6 +37,11 @@ const OverView = () => {
             hrs: 6
         }
     ]
+
+    // const onClickHandler = (e) => {
+    //     console.log("Helllooooooo",e.target);
+    // }
+
     return(
         <>
         <OVContainer>
@@ -45,6 +50,7 @@ const OverView = () => {
                 const date = new Date(shift.date);
                 return (
                     <OVItems 
+                    shift={shift}
                     odd={!(index % 2)}
                     key={index}
                     day={weekdays[date.getDay()]} 
@@ -55,13 +61,6 @@ const OverView = () => {
             })}
             
         </OVContainer>
-        {/* <OVItems day='Monday' date='26' month='January' place='Little India' hr='6'/> */}
-            {/* <OVItems day='Monday' date='26' month='January' place='ID Station' hr='8'/>    */}
-        {/* <Modal>
-            <div>helow world1</div>
-            <div>helow world2</div>
-            <div>helow world3</div>
-        </Modal> */}
         </>
     )
 }

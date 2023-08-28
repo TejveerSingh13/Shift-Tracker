@@ -1,11 +1,28 @@
 import styled from 'styled-components'
+import { FaRegWindowClose } from "react-icons/fa";
+
+export const IconContainer = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+`
+
+export const CrossIcon = styled(FaRegWindowClose)`
+  color: white;
+  width: 24px;
+  height: 24px;
+  margin-left: auto;
+  &:hover {
+    cursor: pointer;
+  }
+`
 
 export const FormContainer = styled.div`
   margin: 100px auto;
   z-index:2;
   padding:8px 16px;
   border-radius:10px;
-  background-color: #3b3a3a;
+  border: 3px solid rgb(237 236 238);
+  background-color: #c34a36;
   color: white;
   max-width:300px;
   @media (min-width: 558px) {

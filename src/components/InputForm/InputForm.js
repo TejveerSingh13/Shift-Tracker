@@ -14,13 +14,16 @@ const InputForm = (props) => {
 
     const datadata = useSelector(state => state.user)
     const places = datadata.data.places
-    const {sentData} = props
+
+    const {sendData, prevData} = props
+
+    console.log('seriously wtf', prevData);
 
     const [shiftInfo, setShiftInfo] = useState({
-        place:'',
-        ti:'',
-        to:'',
-        date:'',
+        place: prevData?.place || '',
+        ti:prevData?.ti || '',
+        to:prevData?.to || '',
+        date:prevData?.date || '',
     })
 
     const changeHandler = (e) => {
@@ -37,13 +40,13 @@ const InputForm = (props) => {
     const onSubmit = () => {
         const hr = gethrs()
         const details = {...shiftInfo, hrs: hr}
-        if(!props?.data) setShiftInfo({
+        if(!prevData) setShiftInfo({
             place:'',
             ti:'',
             to:'',
             date:'',
         })
-        sentData(details)
+        sendData(details)
     }
 
     return(
@@ -72,7 +75,13 @@ const InputForm = (props) => {
                 <Input type= 'date' value={shiftInfo.date} onChange={changeHandler} name='date'/>
             </InputCover>
             <ButtonContainer>
-                <FormButton onClick={onSubmit}>Save</FormButton>
+                {!prevData ? 
+                <FormButton margin={true} width={true} onClick={onSubmit}>Save</FormButton> 
+                :<div>
+                    <FormButton margin={false} width={false} onClick={onSubmit}>Delete</FormButton>
+                    <FormButton margin={false} width={false} onClick={onSubmit}>Update</FormButton>
+                    <FormButton margin={false} width={false} onClick={onSubmit}>Cancel</FormButton>
+                </div>}
             </ButtonContainer>
         </>
     )

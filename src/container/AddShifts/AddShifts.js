@@ -29,7 +29,7 @@ const AddShifts = ({places}) => {
                     <AddIcon onClick={onAddClick}/>
                 </ASContainerTitile>
                 <FormContainer height={taskFlag.toString()}>
-                    <InputForm sentData= {getFormData}/>
+                    <InputForm sendData= {getFormData}/>
                 </FormContainer>
             </ASContainer>
         </>

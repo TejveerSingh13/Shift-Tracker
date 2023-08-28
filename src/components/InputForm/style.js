@@ -40,12 +40,13 @@ export const TimeInputCont = styled.div`
 export const ButtonContainer = styled.div`
   display:flex;
   align-items:center;
+  justify-content: space-evenly;
 `
 export const FormButton = styled.button`
-  margin: 16px auto 0;
+  margin: ${props => props.margin ? '16px auto 0' : '8px 4px 0'};
   height:32px;
   border: none;
-  width:144px;
+  width:${props => props.width ? '144px' : '92px'};
   border-radius:20px;
   color: white;
   outline: none;
