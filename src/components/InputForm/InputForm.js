@@ -17,8 +17,6 @@ const InputForm = (props) => {
 
     const {sendData, prevData} = props
 
-    console.log('seriously wtf', prevData);
-
     const [shiftInfo, setShiftInfo] = useState({
         place: prevData?.place || '',
         ti:prevData?.ti || '',

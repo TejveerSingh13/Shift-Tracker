@@ -4,6 +4,7 @@ import { RiLoader2Fill } from "react-icons/ri";
 export const HomePageContainer = styled.div`
 display :flex;
 flex-direction : column;
+margin: 16px 12px;
 @media (min-width: 588px) {
     align-items: center;
 }
@@ -35,4 +36,16 @@ width: 48px;
 height: 48px;
 margin: auto;
 animation: ${spinAnimation} 1.5s infinite linear;
+`
+export const NavigationContainer = styled.div`
+padding: 16px;
+display: flex;
+color: white;
+border: white 2px solid;
+justify-content: space-between;
+background-color: #8b56c7;
+`
+export const NavigationButton = styled.div`
+cursor: pointer;
+margin-right: ${props => props.margin ? '8px' : '0'};
 `

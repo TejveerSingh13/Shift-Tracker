@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
 function App() {
   return (
     <Provider store={store}>
-      <div style={{margin:'16px 12px 16px 12px'}}>
+      <div>
         <GlobalStyle />
         <HomePage />
       </div>
