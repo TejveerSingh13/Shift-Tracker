@@ -6,6 +6,7 @@ import AddShifts from "../AddShifts/AddShifts";
 import { getUserData } from "../../redux/ActionCreator";
 import { HomePageContainer, LoaderContainer, LoaderIcon, NavigationButton, NavigationContainer } from "./style";
 import Modal from "../../components/Modal";
+import AddLocation from "./AddLocation";
 
 
 const HomePage = () => {
@@ -43,13 +44,7 @@ const HomePage = () => {
             </HomePageContainer>
             {updateToggle && 
             <Modal onclick={onToggleHandle}>
-                <div>
-                    <div>Add a new work place</div>
-                    <div>Name</div>
-                    <input type="text" />
-                    <div>Rate '$'</div>
-                    <input type="number" />
-                </div>
+                <AddLocation />
             </Modal>}
         </>
     );

@@ -49,3 +49,27 @@ export const NavigationButton = styled.div`
 cursor: pointer;
 margin-right: ${props => props.margin ? '8px' : '0'};
 `
+export const AddLocationContainer = styled.div`
+margin-bottom: 8px
+`
+export const AddLocationButtonContainer = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 130px;
+`
+export const AddLocationButton = styled.button`
+  margin-left: 18px; 
+  height:32px;
+  border: none;
+  width: 92px;
+  border-radius:20px;
+  color: white;
+  outline: none;
+  font-size: 16px;
+  background-color:black;
+  font-family: 'Pacifico', cursive;
+  &:hover {
+    cursor: pointer;
+  }
+`
