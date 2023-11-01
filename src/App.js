@@ -1,7 +1,8 @@
 import {createGlobalStyle} from "styled-components"
-import HomePage from "./container/HomePage/HomePage";
+// import HomePage from "./container/HomePage/HomePage";
 import {store} from "./store";
 import { Provider } from "react-redux";
+import LoginPage from "./container/LoginPage";
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -14,7 +15,8 @@ function App() {
     <Provider store={store}>
       <div>
         <GlobalStyle />
-        <HomePage />
+        <LoginPage />
+        {/* <HomePage /> */}
       </div>
     </Provider>
   );

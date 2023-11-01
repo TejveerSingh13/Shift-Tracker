@@ -5,7 +5,7 @@ const Modal = (props) => {
     return (
         <ModalContainer>
             <FormContainer>
-                <IconContainer><CrossIcon onClick={props.onclick}/></IconContainer>
+                {!props.button ?? <IconContainer><CrossIcon onClick={props.onclick}/></IconContainer>}
                 {props.children}
             </FormContainer>
         </ModalContainer>
