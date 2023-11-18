@@ -15,7 +15,7 @@ export const MainContainer = styled.div`
   height: 300px;
   @media (min-width: 558px) {
     max-width:400px;
-    margin-top:80px;
+    margin-top:280px;
   }
 `
 export const BackgroundContainer = styled.div`
@@ -36,4 +36,7 @@ export const PagesContainer = styled.div`
 export const PageContainer = styled.div`
   width: 400px;
   margin-right: 32px;
+  @media (max-width: 558px) {
+    width:300px;
+  }
 `
